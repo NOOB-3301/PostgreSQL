@@ -51,3 +51,45 @@ def get_blogs():
             }
         })
     return jsonify(blog_list)
+
+
+@blog_bp.route('/editblog/<int:blog_id>', methods=['POST'])
+@jwt_required()
+def edit_blog(blog_id):
+    data = request.json
+    print(data)
+    updatetionStatus = False
+    fetchedblog = Blog.query.get(blog_id)
+    if(data.get('title')):
+        fetchedblog.title = data['title']
+        updatetionStatus = True
+    if(data.get('content')):
+        fetchedblog.content = data['content']
+        updatetionStatus = True
+    if(updatetionStatus):
+        db.session.commit()
+        return jsonify({'message': 'Blog updated successfully', "updatetionStatus": updatetionStatus, "updatedBlog": {
+            'id': fetchedblog.id,
+            'title': fetchedblog.title,
+            'content': fetchedblog.content,
+            'user_id': fetchedblog.user_id,
+            'username': fetchedblog.user.username,  # Access username from the related User model
+            'user_obj': {
+                'id': fetchedblog.user.id,
+                'username': fetchedblog.user.username,
+                'email': fetchedblog.user.email
+            }
+        }})
+    else:
+        return jsonify({'message': 'Blog does not updated', "updatetionStatus": updatetionStatus, "updatedBlog": {
+            'id': fetchedblog.id,
+            'title': fetchedblog.title,
+            'content': fetchedblog.content,
+            'user_id': fetchedblog.user_id,
+            'username': fetchedblog.user.username,  # Access username from the related User model
+            'user_obj': {
+                'id': fetchedblog.user.id,
+                'username': fetchedblog.user.username,
+                'email': fetchedblog.user.email
+            }
+        }})
