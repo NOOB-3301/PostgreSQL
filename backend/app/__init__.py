@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from .config import Config
 from flask_jwt_extended import JWTManager
@@ -15,7 +15,7 @@ def create_app():
 
     @app.route('/')
     def index():
-        return 'Hello'
+        return jsonify({'message': 'Server is running....'})
     
     from .controllers import api_bp
 
