@@ -1,6 +1,6 @@
 # The server is hosted on render not on vercel , please use this link [Render link](https://postgresql-mmqh.onrender.com/)
 
-I have added basic authentication system in flask and postgresql . I hosted them on render and make them production ready
+I have added basic authentication and blog operations like adding, editing system in flask and postgresql . I hosted them on render and make them production ready
 
 # Approach:
 
