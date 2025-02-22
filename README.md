@@ -48,7 +48,7 @@ Auth routes:
 /editblog/<int:blog_id>   - for editing any blog
 ```
 ## Testing:
-Images can be found in 
+Images can be found in [images](./images/images.md)
 Can be tested via postman
 ### request schema:
 ```
