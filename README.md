@@ -28,6 +28,7 @@ backend/
 ## Database:
 1. Used Postgresql database hosted on `railway` and for the backend server used flask and  it is hosted on `render` .
 2. Used `Gunicorn run:app` for deployment command. As flask's `app.run()` does not used in production based environment instead, have to use wsgi server like gunicorn which acts as a bridge between web servers and Python web applications like Flask.
+3. Used Flask-SQLAlchemy orm for intarecting with database
 
 ## Hosted Url:
 [render link](https://postgresql-mmqh.onrender.com/) <br>
