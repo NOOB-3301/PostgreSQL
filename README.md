@@ -35,13 +35,20 @@ backend/
 Render pin down with inactivity, which can delay requests 
 
 ## Routes:
+Auth routes:
 ```
 /auth/login      - for login
 /auth/register   - for register
 /user/profile    - for user profile
 ```
-## Testing:
 
+```
+/addblog                  - for adding a blog
+/blogs                    - for getting all blogs
+/editblog/<int:blog_id>   - for editing any blog
+```
+## Testing:
+Images can be found in 
 Can be tested via postman
 ### request schema:
 ```
