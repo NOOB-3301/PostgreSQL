@@ -1,5 +1,5 @@
 alabaster==1.0.0
-attrs==23.2.1.dev0
+attrs>=23.2.0
 autocommand==2.2.2
 Babel==2.15.0
 breathe==4.35.0
