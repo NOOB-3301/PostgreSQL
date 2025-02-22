@@ -12,7 +12,13 @@ def create_app():
 
     db.init_app(app)
     jwt.init_app(app)
+
+    @app.route('/')
+    def index():
+        return 'Hello'
+    
     from .controllers import api_bp
+
     app.register_blueprint(api_bp, url_prefix='/')
 
     return app

@@ -24,6 +24,6 @@ def login():
         return jsonify({'access_token': access_token}), 200
     return jsonify({'error': 'Invalid credentials'}), 401
 
-@api_bp.route('/auth/test', methods=['GET'])
-def test():
-    return jsonify({'message': 'Test successful'}), 200
+# @api_bp.route('/test', methods=['GET'])
+# def test():
+#     return jsonify({'message': 'Test successful'}), 200
