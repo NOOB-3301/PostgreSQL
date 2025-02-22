@@ -6,6 +6,7 @@ class User(BaseModel):
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.LargeBinary(60), nullable=False)  # Store as binary for bcrypt
+    blogs = db.relationship('Blog', back_populates='user')
     
     def set_password(self, password):
         # Generate a salt and hash the password

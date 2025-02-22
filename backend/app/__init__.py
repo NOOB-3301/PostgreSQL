@@ -18,7 +18,9 @@ def create_app():
         return jsonify({'message': 'Server is running....'})
     
     from .controllers import api_bp
+    from .controllers import blog_bp
 
     app.register_blueprint(api_bp, url_prefix='/')
+    app.register_blueprint(blog_bp, url_prefix='/')
 
     return app
